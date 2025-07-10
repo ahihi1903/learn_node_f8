@@ -1,0 +1,29 @@
+{
+  "name": "learn_node_f8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "5.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon --inspect index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahihi1903/learn_node_f8.git"
+  },
+  "keywords": [
+    "f8",
+    "nodejs",
+    "nodejs"
+  ],
+  "author": "kiet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahihi1903/learn_node_f8/issues"
+  },
+  "homepage": "https://github.com/ahihi1903/learn_node_f8#readme"
+}
