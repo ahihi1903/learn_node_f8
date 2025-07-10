@@ -5,6 +5,8 @@ const morgan = require('morgan')
 const app = express()
 const port = 8080
 
+app.use(express.static(path.join(__dirname, 'public')))
+
 //template engine
 app.engine('handlebars', handlebars.engine());
 app.set('view engine', 'handlebars');
