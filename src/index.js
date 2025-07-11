@@ -5,8 +5,14 @@ const morgan = require('morgan')
 const app = express()
 const port = 8080
 
+const routes = require('./routes/index')
+
 app.use(express.static(path.join(__dirname, 'public')))
 
+app.use(express.urlencoded({
+  extended: true
+}))
+app.use(express.json())
 //template engine
 app.engine('handlebars', handlebars.engine());
 app.set('view engine', 'handlebars');
@@ -15,14 +21,10 @@ app.set('views', path.join(__dirname, 'resources/views'));
 app.use(morgan('combined'))
 
 
-//route
-app.get('/', (req, res) => {
-  res.render('home');
-})
+//routes init
 
-app.get('/new', (req, res) => {
-  res.render('new');
-})
+routes(app)
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
