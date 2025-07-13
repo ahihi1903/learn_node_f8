@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node", // Loại cấu hình: Node.js
+            "request": "launch", // Yêu cầu chạy mới ứng dụng
+            "name": "Debug Node.js", // Tên hiển thị trong VS Code
+            "skipFiles": [
+                "<node_internals>/**" // Bỏ qua file nội bộ của Node.js khi debug
+            ],
+            "program": "${workspaceFolder}/src/index.js", // File chính cần chạy
+            "runtimeExecutable": "nodemon", // Dùng nodemon thay vì node để auto-reload
+            "restart": true, // Tự restart khi có thay đổi
+            "console": "integratedTerminal", // Mở trong terminal tích hợp của VS Code
+            "internalConsoleOptions": "neverOpen", // Không mở console riêng
+            "env": {
+                "NODE_ENV": "development" // Thiết lập biến môi trường
+            }
+        }
+    ]
+}
