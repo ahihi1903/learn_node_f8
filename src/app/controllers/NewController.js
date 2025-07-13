@@ -1,16 +1,13 @@
 class NewController {
-  
     //get /new
-    index(req,res){
+    index(req, res) {
         res.render('new');
     }
 
     //get /new/:slug
     show(req, res) {
-        res.send('NEWS DETAIL!!! ')
+        res.send('NEWS DETAIL!!! ');
     }
-
-
 }
 
-module.exports = new NewController;
+module.exports = new NewController();

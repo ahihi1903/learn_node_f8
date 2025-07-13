@@ -6,12 +6,26 @@
   "dependencies": {
     "express": "5.1.0",
     "express-handlebars": "^8.0.3",
+    "mongoose": "^8.16.3",
     "sass": "^1.89.2"
   },
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --write --tab-width 4 --single-quote --trailing-comma all"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "devDependencies": {
-    "morgan": "^1.10.0"
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "morgan": "^1.10.0",
+    "prettier": "^3.6.2"
   },
   "scripts": {
+    "beautiful_2": "prettier 'src/**/*.{js,json,scss}' --write --tab-width 4 --single-quote --trailing-comma all",
+    "beautiful": "lint-staged",
     "start": "nodemon --inspect src/index.js",
     "watch": "sass --watch src/resources/scss/app.scss src/public/css/app.css",
     "test": "echo \"Error: no test specified\" && exit 1"

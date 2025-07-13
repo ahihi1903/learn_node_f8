@@ -2,7 +2,6 @@ const newRouter = require('./news');
 const siteRouter = require('./site');
 
 function routes(app) {
-  
     // app.get('/search', (req, res) => {
     //     res.render('search');
     // }
@@ -16,7 +15,6 @@ function routes(app) {
     //     res.render('home');
     // })
     app.use('/', siteRouter);
-   
 }
 
 module.exports = routes;
