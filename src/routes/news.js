@@ -6,8 +6,8 @@ const newController = require('../app/controllers/NewController');
 //newController.index
 //tạo sau pk cho lên trc để load qua
 
-router.use('/:slug', newController.show);
+router.get('/:slug', newController.show);
 
-router.use('/', newController.index);
+router.get('/', newController.index);
 
 module.exports = router;

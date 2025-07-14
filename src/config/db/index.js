@@ -1,18 +1,15 @@
 const mongoose = require('mongoose');
 
-async function connect(){
-
-    try{
-        await mongoose.connect('mongodb://localhost:27017/f8_education_dev',{
+async function connect() {
+    try {
+        await mongoose.connect('mongodb://localhost:27017/f8_education_dev', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
         console.log('Connect successfully to MongoDB');
-    } catch (error){
+    } catch (error) {
         console.log('Connect failed to MongoDB');
     }
-
-
 }
 
-module.exports = {connect};
+module.exports = { connect };

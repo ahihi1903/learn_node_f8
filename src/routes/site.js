@@ -5,8 +5,11 @@ const siteController = require('../app/controllers/SiteController');
 
 //tạo sau pk cho lên trc để load qua
 
-router.use('/search', siteController.search);
+router.get('/search', siteController.search);
 
-router.use('/', siteController.index);
+router.get('/', siteController.index);
 
 module.exports = router;
+//f8
+//git okey
+// mongodb sơ
