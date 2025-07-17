@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const methodOverride = require('method-override');
 const handlebars = require('express-handlebars');
 const morgan = require('morgan');
 const app = express();
@@ -19,8 +20,18 @@ app.use(
     }),
 );
 app.use(express.json());
+//
+app.use(methodOverride('_method'));
 //template engine
-app.engine('handlebars', handlebars.engine());
+
+
+app.engine('handlebars', handlebars.engine({
+    helpers: {
+        sum: (a, b) => a + b,
+    },
+}));
+
+
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 //HTTP logger
