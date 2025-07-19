@@ -24,13 +24,14 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 //template engine
 
-
-app.engine('handlebars', handlebars.engine({
-    helpers: {
-        sum: (a, b) => a + b,
-    },
-}));
-
+app.engine(
+    'handlebars',
+    handlebars.engine({
+        helpers: {
+            sum: (a, b) => a + b,
+        },
+    }),
+);
 
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resources', 'views'));
