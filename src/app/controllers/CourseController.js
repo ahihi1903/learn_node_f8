@@ -66,20 +66,20 @@ class CourseController {
             .then(() => res.redirect('/me/stored/courses'))
             .catch(next);
     }
-    // restore(req, res, next) {
-    //     const id = req.params.id;
-    //     console.log('==> RESTORE COURSE ID:', id);  // Log ra ID khi gọi
+    
 
-    //     Course.restore({ _id: id })
-    //         .then(() => {
-    //             console.log('==> RESTORE SUCCESS!');
-    //             res.redirect('back');
-    //         })
-    //         .catch((err) => {
-    //             console.error('RESTORE ERROR:', err);
-    //             next(err);
-    //         });
-    // }
+    //[POST]/courses/handle-form-actions
+    handleFormActions(req,res,next){
+        switch(req.body.action){
+            case 'delete':
+                Course.delete({ _id: { $in: req.body.courseIds } })
+                    .then(() => res.redirect('/me/stored/courses'))
+                    .catch(next);
+                break;
+            default:
+                res.json({ message: 'Action is invalid! '});        
+        }
+    }
 
 }
 
